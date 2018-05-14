@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.website {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardDeck {
+  height: 300px;
+  width: 300px;
+  color: black;
+}
