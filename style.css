@@ -9,6 +9,9 @@
   align-items: center;
 }
 
+.sg-card__hole--gray-secondary-lightest:hover {
+  cursor: pointer;
+}
 .cardDeck {
   height: 300px;
   width: 300px;
