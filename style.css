@@ -10,12 +10,20 @@
   flex-direction: column;
 }
 
-.sg-card__hole--gray-secondary-lightest:hover {
-  cursor: pointer;
+.sg-logo {
+  margin: 20px;
 }
 
-.myClass {
-  box-shadow: 50px 100px blue;
+.sg-text-bit {
+  display: none;
+}
+
+.result {
+  display: none;
+}
+
+.sg-card__hole--gray-secondary-lightest:hover {
+  cursor: pointer;
 }
 
 .cardDeck {
@@ -23,10 +31,4 @@
   height: 500px;
   width: 300px;
   color: black;
-}
-
-.counter {
-  height: 200px;
-  width: 300px;
-  background-color: #7a8adb;
 }
