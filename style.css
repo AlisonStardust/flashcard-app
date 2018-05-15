@@ -14,3 +14,7 @@
   width: 300px;
   color: black;
 }
+
+.mystyle {
+  border: 20px red solid;
+}
