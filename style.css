@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight: bold;
 }
 
 .website {
@@ -8,13 +9,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #b3c4e7;
 }
 
-.sg-logo {
-  margin: 20px;
-}
-
-.sg-text-bit {
+.heading {
   display: none;
 }
 
@@ -27,8 +25,48 @@
 }
 
 .cardDeck {
-  margin-top: auto;
+  color: black;
+}
+
+.counter-wrapper {
+   color: white;
+}
+
+@media (min-width: 250px) and (max-width: 700px) {
+
+.wrapper {
+  margin-top: 10px;
+}
+
+.cardDeck {
+  height: 450px;
+  width: 250px;
+}
+
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+
+.wrapper {
+  margin-top: 20px;
+}
+
+.cardDeck {
+  height: 500px;
+  width: 250px;
+}
+}
+
+@media (min-width: 1200px) {
+
+.wrapper {
+  margin-top: 30px;
+}
+
+.cardDeck {
+  margin-top: 50px;
   height: 500px;
   width: 300px;
-  color: black;
+}
+
 }
