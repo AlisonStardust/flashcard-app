@@ -1,8 +1,9 @@
 function app () {
-  //all the DOM elements
-  const cardDeck = document.querySelector('.cardDeck');
+  //DOM elements
+  const cardDeck = document.querySelector('.cardDeck-wrapper');
   const counter = document.querySelector('.counter-wrapper');
-  const result = document.querySelector('.result');
+  const result = document.querySelector('.results-wrapper');
+  const logo = document.querySelector('.logo-wrapper');
 
   let i = 0;
   let attempts = 0;
@@ -22,81 +23,60 @@ function app () {
 
     counter.style.backgroundColor = "#3a548d";
     counter.innerText = `Cards left: ${data.length}`;
+
     //I know that innerHTML is bad, however right now this is the only way I am able to to this task
-    //let deckScript = `<div></div>`
-    let deckScript = `<div class="sg-card sg-card--padding-large">
-                    <div class="sg-card__hole">${data[i].question}
-                    </div>
-                    <div class="sg-card__hole sg-card__hole--gray-secondary-lightest">${data[i].answers[0].answer}
-                    </div>
-                    <div class="sg-card__hole sg-card__hole--gray-secondary-lightest">${data[i].answers[1].answer}
-                    </div>
-                  </div>
-                `;
+    let deckScript =
+      `<div class="cardDeck sg-card sg-card--padding-large">
+        <div class="cardDeck_question sg-card__hole">${data[i].question}
+        </div>
+        <div class="cardDeck_answer sg-card__hole sg-card__hole--gray-secondary-lightest">${data[i].answers[0].answer}
+        </div>
+        <div class="cardDeck_answer sg-card__hole sg-card__hole--gray-secondary-lightest">${data[i].answers[1].answer}
+        </div>
+      </div>
+      `;
     cardDeck.innerHTML = deckScript;
 
     let answers = document.querySelectorAll('.sg-card__hole--gray-secondary-lightest');
 
-    // function clickOnCardListeners() {
-    //   answers.forEach((answer) => {
-    //     answer.addEventListener("click", function(x) {
-          // if (data[i].answers[0].correct === true) {
-          //   counter.style.backgroundColor = "#53cf92";
-          //   data.shift(data[i]);
-          //   attempts++;
-          //   checkDataLength();
-          //   setTimeout(() => getSepecificData(data), 1000);
-          // } else {
-          //   counter.style.backgroundColor = "#ff796b";
-          //   data.push(data[i]);
-          //   data.shift(data[i]);
-          //   attempts++;
-          //   checkDataLength();
-          //   setTimeout(() => getSepecificData(data), 1000);
-          // }
-    //     })
-    //   });
-    // }
+    function correct() {
+      counter.style.backgroundColor = "#53cf92";
+      data.shift(data[i]);
+      attempts++;
+      checkDataLength();
+      setTimeout(() => getSepecificData(data), 1000);
+    }
+    
+    function incorrect() {
+      counter.style.backgroundColor = "#ff796b";
+      data.push(data[i]);
+      data.shift(data[i]);
+      attempts++;
+      checkDataLength();
+      setTimeout(() => getSepecificData(data), 1000);
+    }
 
     answers[0].addEventListener("click", function checkUserAnswer() {
-        if (data[i].answers[0].correct === true) {
-          counter.style.backgroundColor = "#53cf92";
-          data.shift(data[i]);
-          attempts++;
-          checkDataLength();
-          setTimeout(() => getSepecificData(data), 1000);
-        } else {
-          counter.style.backgroundColor = "#ff796b";
-          data.push(data[i]);
-          data.shift(data[i]);
-          attempts++;
-          checkDataLength();
-          setTimeout(() => getSepecificData(data), 1000);
-        }
+      if (data[i].answers[0].correct === true) {
+        correct();
+      } else {
+        incorrect();
+      }
     });
     answers[1].addEventListener("click", function checkUserAnswer() {
-        if (data[i].answers[1].correct === true) {
-          counter.style.backgroundColor = "#53cf92";
-          data.shift(data[i]);
-          attempts++;
-          checkDataLength();
-          setTimeout(() => getSepecificData(data), 1000);
-        } else {
-          counter.style.backgroundColor = "#ff796b";
-          data.push(data[i]);
-          data.shift(data[i]);
-          attempts++;
-          checkDataLength();
-          setTimeout(() => getSepecificData(data), 1000);
-        }
+      if (data[i].answers[1].correct === true) {
+        correct();
+      } else {
+        incorrect();
+      }
     });
   }
 
   function checkDataLength() {
     if (data.length === 0) {
-      printResults();
       cardDeck.style.display = "none";
       counter.style.display = "none";
+      printResults();
     }
   }
 
