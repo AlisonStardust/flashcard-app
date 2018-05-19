@@ -28,12 +28,8 @@
   cursor: pointer;
 }
 
-.counter--green {
-  background-color: #53cf92;
-}
-
-.counter--red {
-  background-color: #ff796b;
+.cardDeck_answer--unclickable {
+  pointer-events: none;
 }
 
 .error {
