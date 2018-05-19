@@ -16,10 +16,6 @@
   display: none;
 }
 
-.cardDeck_answer:hover {
-  cursor: pointer;
-}
-
 .cardDeck-wrapper {
   color: black;
 }
@@ -28,36 +24,55 @@
   color: white;
 }
 
-@media (min-width: 250px) and (max-width: 768px) {
-.logo-wrapper {
-  margin-top: 10px;
+.cardDeck_answer:hover {
+  cursor: pointer;
 }
 
-.cardDeck-wrapper {
-  height: 450px;
-  width: 250px;
+.counter--green {
+  background-color: #53cf92;
 }
+
+.counter--red {
+  background-color: #ff796b;
+}
+
+.error {
+  width: 300px;
+  height: 200px;
+  font-size: 1em;
+  display: none;
+}
+
+@media (min-width: 250px) and (max-width: 768px) {
+  .logo-wrapper {
+    margin-top: 10px;
+  }
+
+  .cardDeck-wrapper {
+    height: 450px;
+    width: 250px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-.logo-wrapper {
-  margin-top: 20px;
-}
+  .logo-wrapper {
+    margin-top: 20px;
+  }
 
-.cardDeck-wrapper {
-  height: 500px;
-  width: 250px;
-}
+  .cardDeck-wrapper {
+    height: 500px;
+    width: 250px;
+  }
 }
 
 @media (min-width: 1200px) {
-.logo-wrapper {
-  margin-top: 30px;
-}
+  .logo-wrapper {
+    margin-top: 30px;
+  }
 
-.cardDeck-wrapper {
-  margin-top: 50px;
-  height: 500px;
-  width: 300px;
-}
+  .cardDeck-wrapper {
+    margin-top: 50px;
+    height: 500px;
+    width: 300px;
+  }
 }
